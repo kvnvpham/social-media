@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} | SNS</title>
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Nunito+Sans:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Font Awesome -->
+        <link
+            href="{% static 'fontawesomefree/css/all.min.css' %}"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        {% block styles %}
+        <!-- Custom CSS -->
+        <link href="{% static 'main/css/base_styles.css' %}" rel="stylesheet" />
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <p class="logo">SNS</p>
+
+                <nav>
+                    {% if not request.user.is_authenticated %}
+                    <a class="nav-item" href="{% url 'users:login' %}">
+                        <i class="fa-solid fa-right-to-bracket nav-icon"></i>
+                        <div class="tooltip-text">Login</div>
+                    </a>
+                    <a class="nav-item" href="{% url 'users:register' %}">
+                        <i class="fa-regular fa-id-card nav-icon"></i>
+                        <div class="tooltip-text">Register</div>
+                    </a>
+                    {% else %}
+                    <a class="nav-item" href="#">
+                        <i class="fa-solid fa-house nav-icon"></i>
+                        <div class="tooltip-text">Home</div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <i class="fa-solid fa-user nav-icon"></i>
+                        <div class="tooltip-text">Profile</div>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <i class="fa-solid fa-message nav-icon"></i>
+                        <div class="tooltip-text">Messages</div>
+                    </a>
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+
+        <div class="root">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

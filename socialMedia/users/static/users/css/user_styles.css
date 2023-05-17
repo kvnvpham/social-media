@@ -1,0 +1,40 @@
+div.auth-page {
+    margin: 8% auto;
+    padding: 3%;
+    width: 40%;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+div.auth-page h2 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+div.form-element {
+    padding-bottom: 1rem;
+}
+
+label.form-label {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.form-field {
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+button.authenticate {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #14b8a6;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.authenticate:hover {
+    background-color: #0f766e;
+}
+

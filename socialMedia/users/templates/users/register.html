@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link href="{% static 'users/css/user_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="auth-page">
+        <h2>Register</h2>
+
+        <form action="." method="post">
+            {% csrf_token %}
+
+            <div class="form-element">
+                <label class="form-label">{{ form.username.label }}</label>
+                {{ form.username }}
+            </div>
+            <div class="form-element">
+                <label class="form-label">{{ form.email.label }}</label>
+                {{ form.email }}
+            </div>
+            <div class="form-element">
+                <label class="form-label">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-element">
+                <label class="form-label">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+            </div>
+
+            <div class="auth-errors">
+                {% if form.errors or form.non_field_errors %}
+                    {% for field in form %}
+                        <p class="error">{{ field }}</p>
+                    {% endfor %}
+
+                    {{ form.non_field_errors }}
+                {% endif %}
+            </div>
+
+            <button class="authenticate">Sign In</button>
+        </form>
+    </div>
+{% endblock %}
