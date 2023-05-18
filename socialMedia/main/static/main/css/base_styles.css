@@ -99,8 +99,62 @@ i.nav-icon {
 /* Index */
 
 div.welcome-page {
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12% 0;
+}
+
+h1.company, h3.slogan {
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+}
+
+h1.company {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #14b8a6;
+}
+
+h3.slogan {
+    font-size: 1.4rem;
+}
+
+div.title-entry {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    border: 0.1rem solid #eee;
+    box-shadow: 0.1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+div.title-entry h3, div.title-entry a {
+    margin-bottom: 1rem;
+}
+
+div.title-entry h3 {
     text-align: center;
+}
+
+div.title-entry a {
+    display: block;
+    padding: 0.8rem 8rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+a.login {
+    background-color: #444;
+    color: #fff;
+}
+
+a.signup {
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+i.entry-icon {
+    color: #fff;
 }
 
 /* Home */
@@ -113,4 +167,58 @@ div.home-page {
 
 div.home-page .content {
     flex-basis: auto;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem 6rem 4rem 5rem;
+    background-color: #444;
+    color: #fff;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+}
+
+footer h3, p, a {
+    line-height: 1.5;
+}
+
+div.contact {
+    margin: 0 5%;
+    width: 40%;
+}
+
+div.flex-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+div.contact a {
+    font-size: 85%;
+    margin-bottom: 1rem;
+}
+
+div.contact a, i.contact-icon {
+    color: #14b8a6;
+}
+
+@media (max-width: 1256px) {
+    div.contact {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1016px) {
+    footer {
+        display: block;
+    }
+
+    div.contact {
+        margin: 3% 0;
+    }
 }

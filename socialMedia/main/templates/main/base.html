@@ -25,21 +25,13 @@
         {% endblock %}
     </head>
     <body>
+        {% block nav %}
         <header>
             <div class="navbar">
                 <p class="logo">SNS</p>
 
                 <nav>
-                    {% if not request.user.is_authenticated %}
-                    <a class="nav-item" href="{% url 'users:login' %}">
-                        <i class="fa-solid fa-right-to-bracket nav-icon"></i>
-                        <div class="tooltip-text">Login</div>
-                    </a>
-                    <a class="nav-item" href="{% url 'users:register' %}">
-                        <i class="fa-regular fa-id-card nav-icon"></i>
-                        <div class="tooltip-text">Register</div>
-                    </a>
-                    {% else %}
+                    {% if request.user.is_authenticated %}
                     <a class="nav-item" href="#">
                         <i class="fa-solid fa-house nav-icon"></i>
                         <div class="tooltip-text">Home</div>
@@ -56,9 +48,35 @@
                 </nav>
             </div>
         </header>
+        {% endblock %}
 
         <div class="root">
             {% block content %}{% endblock %}
         </div>
+
+        <footer>
+            <div class="about">
+                <h3>About</h3>
+
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Nulla aliquet porttitor lacus luctus accumsan.
+                    Consectetur purus ut faucibus pulvinar elementum integer
+                    enim. Mi quis hendrerit dolor magna eget est lorem ipsum
+                    dolor. Imperdiet massa tincidunt nunc pulvinar.
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Contact Us</h3>
+
+                <div class="flex-contact">
+                    <a href="mailto:kvnvpham@gmail.com"><i class="fa-solid fa-envelope contact-icon"></i> Email</a>
+                    <a href="#"><i class="fa-brands fa-github contact-icon"></i> Github</a>
+                    <a href="#"><i class="fa-brands fa-linkedin contact-icon"></i> LinkedIn</a>
+                    <a href="#"><i class="fa-brands fa-instagram contact-icon"></i> Instagram</a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

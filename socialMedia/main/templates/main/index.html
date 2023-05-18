@@ -2,8 +2,22 @@
 
 {% block title %}Welcome{% endblock %}
 
+{% block nav %}{% endblock %}
+
 {% block content %}
     <div class="welcome-page">
-        <h1>Welcome To Your Own Social Media!</h1>
+        <div>
+            <h1 class="company">SNS</h1>
+            <h3 class="slogan">We make connecting easy</h3>
+        </div>
+        <div class="title-entry">
+            <h3>Connect Now</h3>
+            <a class="entry-item login" href="{% url 'users:login' %}">
+                Login <i class="fa-solid fa-right-to-bracket entry-icon"></i>
+            </a>
+            <a class="entry-item signup" href="{% url 'users:register' %}">
+                Sign Up <i class="fa-solid fa-feather-pointed entry-icon"></i>
+            </a>
+        </div>
     </div>
 {% endblock %}
