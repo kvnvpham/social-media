@@ -32,17 +32,20 @@
                 {{ form.password2 }}
             </div>
 
-            <div class="auth-errors">
-                {% if form.errors or form.non_field_errors %}
+            {% if form.errors or form.non_field_errors %}
+                <div class="auth-errors">
                     {% for field in form %}
-                        <p class="error">{{ field }}</p>
+                        {{ field.errors }}
                     {% endfor %}
-
+            
                     {{ form.non_field_errors }}
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
 
             <button class="authenticate">Sign Up</button>
         </form>
+        <div class="direct-auth">
+            <p>Already have an account? <a href="{% url 'users:login' %}">Login</a></p>
+        </div>
     </div>
 {% endblock %}

@@ -27,6 +27,15 @@ label.form-label {
     text-transform: none;
 }
 
+div.auth-errors li {
+    list-style: none;
+}
+
+div.auth-errors li, p.error {
+    color: red;
+    margin-bottom: 1rem;
+}
+
 button.authenticate {
     padding: 0.5rem;
     border-radius: 5px;
@@ -39,3 +48,14 @@ button.authenticate:hover {
     background-color: #0f766e;
 }
 
+div.direct-auth {
+    margin-top: 1rem;
+}
+
+div.direct-auth a {
+    color: #14b8a6;
+}
+
+div.direct-auth a:hover {
+    color: #0f766e;
+}

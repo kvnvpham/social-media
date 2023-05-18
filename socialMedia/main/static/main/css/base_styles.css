@@ -36,6 +36,24 @@ body {
     margin: 0;
 }
 
+.bg-color {
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+.bg-color:hover {
+    background-color: #0f766e;
+}
+
+.bg-white {
+    background-color: #fff;
+    color: #444;
+}
+
+.bg-white:hover {
+    background-color: #ccc;
+}
+
 /* Base */
 
 header {
@@ -88,8 +106,6 @@ a.nav-item:hover .tooltip-text {
 }
 
 i.nav-icon {
-    background-color: #fff;
-    color: #444;
     border-radius: 50px;
     margin-right: 1rem;
     padding: 8px;
@@ -151,11 +167,6 @@ a.login {
     color: #fff;
 }
 
-a.signup {
-    background-color: #14b8a6;
-    color: #fff;
-}
-
 i.entry-icon {
     color: #fff;
 }
@@ -206,8 +217,12 @@ div.contact a {
     margin-bottom: 1rem;
 }
 
-div.contact a, i.contact-icon {
+div.contact a {
     color: #14b8a6;
+}
+
+div.contact a:hover {
+    color: #0f766e;
 }
 
 @media (max-width: 1256px) {

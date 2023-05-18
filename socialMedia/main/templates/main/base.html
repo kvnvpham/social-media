@@ -32,20 +32,20 @@
 
                 <nav>
                     {% if request.user.is_authenticated %}
-                    <a class="nav-item" href="#">
-                        <i class="fa-solid fa-house nav-icon"></i>
+                    <a class="nav-item" href="{% url 'main:home' %}">
+                        <i class="fa-solid fa-house nav-icon bg-white"></i>
                         <div class="tooltip-text">Home</div>
                     </a>
                     <a class="nav-item" href="#">
-                        <i class="fa-solid fa-user nav-icon"></i>
+                        <i class="fa-solid fa-user nav-icon bg-color"></i>
                         <div class="tooltip-text">Profile</div>
                     </a>
                     <a class="nav-item" href="#">
-                        <i class="fa-solid fa-message nav-icon"></i>
+                        <i class="fa-solid fa-message nav-icon bg-white"></i>
                         <div class="tooltip-text">Messages</div>
                     </a>
-                    <a class="nav-item" href="#">
-                        <i class="fa-solid fa-right-from-bracket nav-icon"></i>
+                    <a class="nav-item" href="{% url 'users:logout' %}">
+                        <i class="fa-solid fa-right-from-bracket nav-icon bg-white"></i>
                         <div class="tooltip-text">Logout</div>
                     </a>
                     {% endif %}

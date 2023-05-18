@@ -15,9 +15,11 @@
             <a class="entry-item login" href="{% url 'users:login' %}">
                 Login <i class="fa-solid fa-right-to-bracket entry-icon"></i>
             </a>
-            <a class="entry-item signup" href="{% url 'users:register' %}">
+            {% if not request.user.is_authenticated %}
+            <a class="entry-item bg-color" href="{% url 'users:register' %}">
                 Sign Up <i class="fa-solid fa-feather-pointed entry-icon"></i>
             </a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -24,17 +24,18 @@
                 {{ form.password }}
             </div>
 
-            <div class="auth-errors">
-                {% if form.errors or form.non_field_errors %}
-                    {% for field in form %}
-                        <p class="error">{{ field }}</p>
+            {% if messages %}
+                <div class="auth-errors">
+                    {% for message in messages %}
+                        <p class="error">{{ message }}</p>
                     {% endfor %}
-
-                    {{ form.non_field_errors }}
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
 
             <button class="authenticate">Sign In</button>
         </form>
+        <div class="direct-auth">
+            <p>Don't have an account? <a href="{% url 'users:register' %}">Sign Up</a></p>
+        </div>
     </div>
 {% endblock %}
