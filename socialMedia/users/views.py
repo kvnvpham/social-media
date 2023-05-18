@@ -47,7 +47,7 @@ def login_user(request):
             login(request, user)
             return redirect('main:home')
         else:
-            messages.error(request, 'Wrong Username or Password')
+            messages.error(request, 'There Was An Error Logging In. Please Try Again.')
             form = LoginForm()
             return render(request, 'users/login.html', {
                 'form': form
