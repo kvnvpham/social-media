@@ -39,7 +39,7 @@ body {
 /* Base */
 
 header {
-    background-color: #ccc;
+    background-color: #444;
 }
 
 header .navbar {
@@ -52,6 +52,9 @@ header .navbar {
 
 header p.logo {
     margin-right: auto;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: #fff;
 }
 
 nav {
