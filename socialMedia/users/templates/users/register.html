@@ -16,6 +16,14 @@
             {% csrf_token %}
 
             <div class="form-element">
+                <label class="form-label">{{ form.first_name.label }}</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-element">
+                <label class="form-label">{{ form.last_name.label }}</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-element">
                 <label class="form-label">{{ form.username.label }}</label>
                 {{ form.username }}
             </div>
