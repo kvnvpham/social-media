@@ -26,7 +26,6 @@ def home(request):
         following_posts = Post.objects.filter(user__profile__following__id=request.user.id).order_by('-posted_on')
         following_users = UserProfile.objects.filter(following__id=request.user.id)[:10]
 
-
     return render(request, 'main/home.html', {
         'form': form,
         'all_posts': following_posts,

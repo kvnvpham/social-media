@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .forms import RegisterForm, LoginForm
+from .models import UserProfile
 
 
 def register(request):
@@ -57,3 +59,12 @@ def login_user(request):
         return render(request, 'users/login.html', {
             'form': form,
         })
+
+
+@login_required
+def dashboard(request):
+    profile = get_object_or_404(UserProfile, user=request.user.id)
+
+    return render(request, 'users/dashboard.html', {
+        'profile': profile,
+    })

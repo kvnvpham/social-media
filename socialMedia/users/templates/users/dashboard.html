@@ -9,13 +9,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Dashboard</h1>
+    <h1>{{ profile.user }}</h1>
 
-    <!-- Username -->
-    <!-- Bio? -->
-    <!-- First Name -->
-    <!-- Last Name -->
-    <!-- Email Address -->
-    <!-- Date Joined -->
+
+    <p>First Name: {{ profile.user.first_name }}</p>
+    <p>Last Name: {{ profile.user.last_name }}</p>
+    <p>Email: {{ profile.user.email }}</p>
+    <p>Date Joined: {{ profile.user.date_joined }}</p>
+    
     <!-- Followers -->
 {% endblock %}
