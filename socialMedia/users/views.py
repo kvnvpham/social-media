@@ -64,7 +64,28 @@ def login_user(request):
 @login_required
 def dashboard(request):
     profile = get_object_or_404(UserProfile, user=request.user.id)
+    following = profile.following.exclude(pk=request.user.id)
+    followers = profile.followers.exclude(pk=request.user.id)
 
     return render(request, 'users/dashboard.html', {
         'profile': profile,
+        'following': following,
+        'followers': followers,
+    })
+
+
+@login_required
+def view_profile(request, user_id):
+    profile = get_object_or_404(UserProfile, user=user_id)
+    following = profile.following.exclude(pk=user_id)
+    followers = profile.followers.exclude(pk=user_id)
+
+    current_user_follows = UserProfile.objects.filter(followers__id=request.user.id).exclude(pk=request.user.id)
+    is_following = current_user_follows.filter(pk=str(user_id))
+
+    return render(request, 'users/dashboard.html', {
+        'profile': profile,
+        'following': following,
+        'followers': followers,
+        'isFollowing': is_following,
     })

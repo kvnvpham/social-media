@@ -1,3 +1,5 @@
+/* Login / Register */
+
 div.auth-page {
     margin: 8% auto;
     padding: 3%;
@@ -58,4 +60,58 @@ div.direct-auth a {
 
 div.direct-auth a:hover {
     color: #0f766e;
+}
+
+/* Dashboard */
+
+.mr-bot-2 {
+    margin-bottom: 2rem;
+}
+
+.mr-bot-05 {
+    margin-bottom: 0.5rem;
+}
+
+a.follow-btn {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+a.follow-btn:hover {
+    background-color: #0f766e;
+}
+
+div.follow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 15rem));
+    gap: 10px;
+}
+
+div.follow-grid a {
+    color: inherit;
+}
+
+div.follow-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border: 0.01rem solid #444;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+div.follow-card:hover {
+    border:0.01rem solid #0f766e;
+    transform: scale(0.98);
+}
+
+i.profile-icon {
+    border-radius: 50px;
+    margin-right: 1.5rem;
+    padding: 0.5rem;
+    background-color: #14b8a6;
+    color: #fff;
 }

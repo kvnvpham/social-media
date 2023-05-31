@@ -9,13 +9,57 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ profile.user }}</h1>
+    <div class="mr-bot-2">
+        <h1 class="fontsize-md">{{ profile.user }}</h1>
+        <p>Date Joined: {{ profile.user.date_joined }}</p>
+    </div>
 
+    {% if profile.user.id == request.user.id %}
+        <div class="mr-bot-2">
+            <h2 class="mr-bot-05">First Name</h2>
+            <p class="mr-bot-05">{{ profile.user.first_name }}</p>
 
-    <p>First Name: {{ profile.user.first_name }}</p>
-    <p>Last Name: {{ profile.user.last_name }}</p>
-    <p>Email: {{ profile.user.email }}</p>
-    <p>Date Joined: {{ profile.user.date_joined }}</p>
-    
-    <!-- Followers -->
+            <h2 class="mr-bot-05">Last Name</h2>
+            <p class="mr-bot-05">{{ profile.user.last_name }}</p>
+
+            <h2 class="mr-bot-05">Email</h2>
+            <p>{{ profile.user.email }}</p>
+        </div>
+    {% else %}
+        <div class="mr-bot-2">
+            {% if isFollowing %}
+            <a class="mr-bot-05 follow-btn" href="#">Unfollow</a>
+            {% else %}
+            <a class="mr-bot-05 follow-btn" href="#">Follow</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="profile-follow mr-bot-2">
+        <h2 class="mr-bot-05">Following ({{ following.count }})</h2>
+        <div class="follow-grid">
+            {% for follow in following %}
+                <a href="{% url 'users:profile' follow.id %}">
+                    <div class="follow-card">
+                        <i class="fa-solid fa-user profile-icon"></i>
+                        <p>{{ follow }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="profile-follow mr-bot-2">
+        <h2 class="mr-bot-05">Followers ({{ followers.count }})</h2>
+        <div class="follow-grid">
+            {% for follower in followers %}
+                <a href="{% url 'users:profile' follower.id %}">
+                    <div class="follow-card">
+                        <i class="fa-solid fa-user profile-icon"></i>
+                        <p>{{ follower }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

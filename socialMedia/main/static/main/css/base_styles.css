@@ -185,6 +185,10 @@ div.content {
     max-width: 75%;
 }
 
+.fontsize-md {
+    font-size: 2rem;
+}
+
 div.create-post {
     position: relative;
     margin: 2rem 0;
@@ -247,6 +251,7 @@ div.post-flex .post-content {
 
 div.post-content p {
     word-wrap: break-word;
+    text-transform: none;
 }
 
 .fontsize-sm {
