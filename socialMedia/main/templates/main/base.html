@@ -40,7 +40,7 @@
                         <i class="fa-solid fa-user nav-icon bg-color"></i>
                         <div class="tooltip-text">Profile</div>
                     </a>
-                    <a class="nav-item" href="#">
+                    <a class="nav-item" href="{% url 'chats:chat_dashboard' %}">
                         <i class="fa-solid fa-message nav-icon bg-white"></i>
                         <div class="tooltip-text">Messages</div>
                     </a>
@@ -82,5 +82,8 @@
                 </div>
             </div>
         </footer>
+
+        {% block js %}
+        {% endblock %}
     </body>
 </html>

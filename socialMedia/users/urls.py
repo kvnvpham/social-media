@@ -12,4 +12,6 @@ urlpatterns=[
     path('register/', views.register, name='register'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('profile/<int:user_id>/', views.view_profile, name='profile'),
+    path('profile/follow/<int:profile_id>', views.follow, name='follow'),
+    path('profile/unfollow/<int:profile_id>', views.unfollow, name='unfollow'),
 ]

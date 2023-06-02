@@ -1,0 +1,58 @@
+/* Home Page - Content */
+
+div.chat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    border: 0.01rem solid #14b8a6;
+    border-radius: 5px;
+}
+
+div.chat-card:hover {
+    border: 0.01rem solid #0f766e;
+    transform: scale(0.98);
+}
+
+i.chat-icon {
+    color: #14b8a6;
+}
+
+/* Search */
+
+div.search {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    border: 0.01rem solid #14b8a6;
+}
+
+input.search-input {
+    padding: 2%;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 5px;
+    text-transform: none;
+}
+
+button.search-btn {
+    float: right;
+    padding: 0.5rem;
+    background-color: #14b8a6;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.search-btn:hover {
+    background-color: #0f766e;
+}
+
+div.search-results {
+    text-align: end;
+}
+
+div.search-results a {
+    display: block;
+    text-transform: none;
+}

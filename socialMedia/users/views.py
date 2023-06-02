@@ -89,3 +89,25 @@ def view_profile(request, user_id):
         'followers': followers,
         'isFollowing': is_following,
     })
+
+
+@login_required
+def follow(request, profile_id):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    isFollowing = user_profile.following.filter(pk=str(profile_id))
+
+    if not isFollowing:
+        user_profile.following.add(profile_id)
+
+    return redirect('main:home')
+
+
+@login_required
+def unfollow(request, profile_id):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    isFollowing = user_profile.following.filter(pk=str(profile_id))
+
+    if isFollowing:
+        user_profile.following.remove(profile_id)
+
+    return redirect('main:home')

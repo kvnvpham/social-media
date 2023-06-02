@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Chats{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link href="{% static 'users/css/user_styles.css' %}" rel="stylesheet">
+    <link href="{% static 'chats/css/chat_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="home-page">
+        <div class="content">
+            <h1 class="fontsize-md myb-2">Chats</h1>
+
+            <div> 
+                <div class="space-posts">
+                    {% if all_chats %}
+                        {% for chat in all_chats %}
+                            <a href="#">
+                                <div class="chat-card" onmouseover="changeIconColor()" onmouseout="returnIconColor()">
+                                    <i class="fa-solid fa-comment chat-icon"></i>
+                                    {% for user in chat.users.all %}
+                                        {% if user != request.user %}
+                                            <p><strong>{{ user }}</strong></p>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <p class="fontsize-sm">{{ chat.modified_on }}</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <p>No active chats found</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <div class="search-bar">
+                <form action="." method="post">
+                    {% csrf_token %}
+
+                    <input 
+                        class="search-input myb-05" 
+                        type="text" 
+                        name="search" 
+                        value="{{ value }}" 
+                        placeholder="Search Username"
+                    />
+                    <button class="search-btn myb-2" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="search-results">
+                {% if results %}
+                    <h2 class="myb-05">Results ({{ results.count }})</h2>
+                    {% for user in results %}
+                        <a class="myb-05" href="#">{{ user }}</a>
+                    {% endfor %}
+                {% else %}
+                    <p>No Results Found</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'chats/js/chat.js' %}"></script>
+{% endblock %}
