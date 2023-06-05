@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Chat{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link href="{% static 'chats/css/chat_styles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    {% for user in chat.users.all %}
+        {% if user != request.user %}
+            <h1 class="fontSize-md myb-2">{{ user }}</h1>
+        {% endif %}
+    {% endfor %}
+
+    <div class="chat-window" onchange="scrollToBottom()">
+        {% if chat.messages.all %}
+            {% for message in chat.messages.all %}
+                <div 
+                    class="messages {% if message.created_by == request.user %}sent-message{% else %}received-message{% endif %}"
+                >
+                    <p class="message-content">{{ message.content }}</p>
+                    <div class="message-tag">
+                        <p class="fontSize-xsm">{{ message.created_by }}, {{ message.created_at }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No Messages Yet</p>
+        {% endif %}
+    </div>
+    <div class="message-box">
+        <form action="{% url 'chats:chat' chat.id %}" method="post">
+            {% csrf_token %}
+
+            {{ form.content }}
+            <button class="send-message">Send</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'chats/js/chat.js' %}"></script>
+{% endblock %}

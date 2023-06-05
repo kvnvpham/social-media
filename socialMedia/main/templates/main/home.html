@@ -5,7 +5,7 @@
 {% block content %}
     <div class="home-page">
         <div class="content">
-            <h1 class="fontsize-md">Home</h1>
+            <h1 class="fontSize-md">Home</h1>
     
             <div class="create-post">
                 <form class="post-form" action="." method="post">
@@ -29,8 +29,8 @@
                             </div>
                             
                             <div class="post-tag">
-                                <p><strong class="fontsize-sm">{{ post.user.username }}</strong></p>
-                                <p class="fontsize-sm">{{ post.modified_on }}</p>
+                                <p><strong class="fontSize-sm">{{ post.user.username }}</strong></p>
+                                <p class="fontSize-sm">{{ post.modified_on }}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -46,10 +46,10 @@
             <h2>Following</h2>
             
             {% for user in following %}
-                <p class="fontsize-sm">{{ user }}</p>
+                <p class="fontSize-sm">{{ user }}</p>
             {% endfor %}
 
-            <a class="fontsize-sm" href="{% url 'users:dashboard' %}">View All</a>
+            <a class="fontSize-sm" href="{% url 'users:dashboard' %}">View All</a>
         </div>
     </div>
     

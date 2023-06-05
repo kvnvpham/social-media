@@ -28,8 +28,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
     background-color: #444;
-    border-radius: 5px;
-    height: 5%;
+    border-radius: 10px;
 }
 
 body {
@@ -52,6 +51,26 @@ body {
 
 .bg-white:hover {
     background-color: #ccc;
+}
+
+.myb-05 {
+    margin-bottom: 0.5rem;
+}
+
+.myb-2 {
+    margin-bottom: 2rem;
+}
+
+.fontSize-xsm {
+    font-size: 65%;
+}
+
+.fontSize-sm {
+    font-size: 85%;
+}
+
+.fontSize-md {
+    font-size: 2rem;
 }
 
 /* Base */
@@ -186,10 +205,6 @@ div.content {
     max-width: 75%;
 }
 
-.fontsize-md {
-    font-size: 2rem;
-}
-
 div.create-post {
     position: relative;
     margin: 2rem 0;
@@ -208,7 +223,6 @@ form.post-form .textbox {
     background-color: #eee;
     border-radius: 5px;
     border: 0.01rem solid #444;
-
 }
 
 button.post-btn {
@@ -254,10 +268,6 @@ div.post-flex .post-content {
 div.post-content p {
     word-wrap: break-word;
     text-transform: none;
-}
-
-.fontsize-sm {
-    font-size: 85%;
 }
 
 /* Home - Sidebar */

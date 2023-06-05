@@ -1,5 +1,10 @@
 /* Home Page - Content */
 
+a.chat {
+    color: inherit;
+}
+
+
 div.chat-card {
     display: flex;
     justify-content: space-between;
@@ -56,3 +61,78 @@ div.search-results a {
     display: block;
     text-transform: none;
 }
+
+/* Chat Window */
+
+div.chat-window {
+    border: 0.01rem solid #14b8a6;
+    border-radius: 5px;
+    padding: 1%;
+    margin-bottom: 1rem;
+    max-height: 30rem;
+    overflow-y: scroll;
+}
+
+div.chat-window::-webkit-scrollbar {
+    width: 8px;
+    scroll-behavior: smooth;
+}
+
+div.chat-window::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+div.chat-window::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #14b8a6;
+}
+
+div.messages {
+    padding: 1%;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+}
+
+.sent-message {
+    border: 0.01rem solid #14b8a6;
+    text-align: end;
+}
+
+.received-message {
+    background-color: #14b8a6;
+    color: #fff;
+}
+
+p.message-content {
+    text-transform: none;
+}
+
+div.message-box {
+    position: relative;
+}
+
+.write-message {
+    resize: none;
+    margin-bottom: 3rem;
+    padding: 1% 10% 1% 1%;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 5px;
+    text-transform: none;
+}
+
+button.send-message {
+    position: absolute;
+    top: 18px;
+    right: 1rem;
+    padding: 0.5rem;
+    background-color: #14b8a6;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.send-message:hover {
+    background-color: #0f766e;
+}
+
