@@ -11,7 +11,7 @@
 
 ## Description
 
-**Social Media (SNS)** is a web application built using Django, similar to Twitter, that allows users to interact with one another. The site allows users to follow or unfollow other users, display their profiles, and view posts from followed profiles. In addition, users are able to send messages to one another through the application's messaging function.
+**Social Media (SNS)** is a web application, built using Django and similar to Twitter, that allows users to interact with one another. The site allows users to follow or unfollow each other, display their profiles, and view posts from followed profiles. In addition, users are able to send messages to one another through the application's messaging function.
 
 ## Installation
 
