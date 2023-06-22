@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.application']
+ALLOWED_HOSTS = []
 
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'main:home'
